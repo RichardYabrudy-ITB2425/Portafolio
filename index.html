@@ -2,27 +2,57 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>Portafolio y Proyectos</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Portafolio de: ???</h1>
+    <header class="hero-section">
+        <img src="https://via.placeholder.com/800x200" alt="Imagen de portada">
+        <h1>Portafolio de: [Tu Nombre]</h1>
+        <p>Texto descriptivo sobre tu misión y experiencia.</p>
     </header>
+
     <nav>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#sobre mi">Sobre mi</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
+
     <main>
-        <!-- Contenido principal -->
+        <section id="sobre-mi" class="about">
+            <h2>Sobre Mí</h2>
+            <p>Breve descripción sobre tu experiencia y habilidades.</p>
+        </section>
+
+        <section id="proyectos" class="proyectos">
+            <h2>Proyectos</h2>
+            <div class="proyecto-item">
+                <img src="https://via.placeholder.com/300" alt="Proyecto 1">
+                <h3>Proyecto 1</h3>
+                <p>Descripción breve del proyecto 1. Explicación sobre su objetivo y logros.</p>
+            </div>
+            <div class="proyecto-item">
+                <img src="https://via.placeholder.com/300" alt="Proyecto 2">
+                <h3>Proyecto 2</h3>
+                <p>Descripción breve del proyecto 2. Detalles sobre su propósito y resultado.</p>
+            </div>
+        </section>
     </main>
-    <footer>
-        <!-- Pie de página -->
+
+    <footer class="footer">
+        <p>Información de Contacto: correo@ejemplo.com | Tel: 123-456-7890</p>
+        <div class="social-icons">
+            <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
+            <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
+            <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 3"></a>
+        </div>
     </footer>
+
     <script src="js/main.js"></script>
 </body>
 </html>

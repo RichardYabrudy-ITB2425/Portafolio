@@ -8,28 +8,21 @@ body {
     box-sizing: border-box;
 }
 
-/* Hero Section */
-.hero-section {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-}
-
-.hero-section img {
+/* Barra de navegación */
+nav.barra {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 800px;
-    height: auto;
-    margin-bottom: 15px;
+    background-color: #444;
+    z-index: 10;
+    padding: 10px 0;
 }
 
-/* Navegación */
 nav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
-    padding: 10px;
-    background-color: #444;
     margin: 0;
 }
 
@@ -46,28 +39,92 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Proyectos */
-.proyectos {
+/* Sección "Sobre mí" */
+.about {
+    background-color: #3e3e3e;
+    padding: 50px 20px;
+    margin-top: 60px;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 20px;
-    gap: 20px;
+    justify-content: center;
 }
 
-.proyecto-item {
-    width: 45%;
-    background-color: #3e3e3e;
-    padding: 10px;
-    border-radius: 8px;
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Hero Section (Encabezado) */
+.hero-section {
+    background-color: #333;
+    color: #fff;
+    padding: 30px;
+    margin-top: 20px;
     text-align: center;
 }
 
-.proyecto-item img {
+.header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header-text h1 {
+    margin-bottom: 10px;
+}
+
+/* Proyectos */
+.proyectos {
+    margin: 30px 0;
+    padding: 30px;
+    background-color: #3e3e3e;
+}
+
+.proyecto-item {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.proyecto-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.proyecto-image img {
     width: 100%;
+    max-width: 350px;
     height: auto;
     border-radius: 5px;
-    margin-bottom: 10px;
+}
+
+.proyecto-text {
+    flex: 1;
+    color: #f0f0f0;
+    margin-top: 10px;
+}
+
+/* Asegura que la imagen esté a la izquierda en Proyecto 1 */
+.proyecto-item:nth-child(1) .proyecto-content {
+    flex-direction: row; /* Imagen a la izquierda, texto a la derecha */
+}
+
+.proyecto-item:nth-child(2) .proyecto-content {
+    flex-direction: row-reverse; /* Imagen a la derecha, texto a la izquierda */
 }
 
 /* Footer */
@@ -76,7 +133,6 @@ nav ul li a:hover {
     background-color: #333;
     color: white;
     padding: 10px;
-    margin-top: 30px;
 }
 
 .social-icons img {
@@ -88,11 +144,12 @@ nav ul li a:hover {
 
 /* Media Queries */
 @media (max-width: 768px) {
-    nav ul {
+    .about-content {
         flex-direction: column;
+        text-align: center;
     }
 
-    .proyecto-item {
-        width: 100%;
+    .proyecto-content {
+        flex-direction: column;
     }
 }

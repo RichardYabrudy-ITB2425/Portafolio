@@ -8,13 +8,8 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header class="hero-section">
-        <img src="https://via.placeholder.com/800x200" alt="Imagen de portada">
-        <h1>Portafolio de: [Tu Nombre]</h1>
-        <p>Texto descriptivo sobre tu misión y experiencia.</p>
-    </header>
-
-    <nav>
+    <!-- Barra de navegación -->
+    <nav class="barra">
         <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -23,34 +18,74 @@
         </ul>
     </nav>
 
-    <main>
-        <section id="sobre-mi" class="about">
-            <h2>Sobre Mí</h2>
-            <p>Breve descripción sobre tu experiencia y habilidades.</p>
-        </section>
+    <!-- Sección "Sobre mí" -->
+    <section id="sobre-mi" class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Sobre Mí</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae neque at ipsum pharetra elementum. Donec hendrerit enim et elit cursus, a fringilla turpis aliquam. Sed euismod tincidunt felis, id aliquet velit. Cras venenatis elit id urna convallis, id placerat purus sollicitudin.</p>
+                <p>Morbi id turpis sit amet lorem tincidunt faucibus. Donec eleifend pharetra neque id luctus. Nulla aliquet felis metus, in tristique enim tincidunt vel. Maecenas at nisi metus. Ut viverra auctor purus, eu placerat dui hendrerit id. Suspendisse sollicitudin sit amet odio in interdum. Nullam egestas magna sed urna porttitor, a tempor metus congue.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://via.placeholder.com/150" alt="Foto de perfil">
+            </div>
+        </div>
+    </section>
 
+    <!-- Sección de encabezado -->
+    <header class="hero-section">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Portafolio de: [Tu Nombre]</h1>
+                <p>Texto descriptivo sobre tu misión y experiencia.</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Proyectos -->
         <section id="proyectos" class="proyectos">
             <h2>Proyectos</h2>
+
+            <!-- Proyecto 1: Imagen a la izquierda, texto a la derecha -->
             <div class="proyecto-item">
-                <img src="https://via.placeholder.com/300" alt="Proyecto 1">
-                <h3>Proyecto 1</h3>
-                <p>Descripción breve del proyecto 1. Explicación sobre su objetivo y logros.</p>
+                <div class="proyecto-content">
+                    <div class="proyecto-image">
+                        <img src="https://via.placeholder.com/300" alt="Proyecto 1">
+                    </div>
+                    <div class="proyecto-text">
+                        <h3>Proyecto 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae neque at ipsum pharetra elementum. Donec hendrerit enim et elit cursus, a fringilla turpis aliquam. Sed euismod tincidunt felis, id aliquet velit. Cras venenatis elit id urna convallis, id placerat purus sollicitudin.</p>
+                        <p>Fusce eget turpis eget felis tempor facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce tristique mi vitae neque venenatis, et sollicitudin felis dapibus. Proin euismod, nulla vitae ultricies sollicitudin, purus erat gravida sem, ut fermentum ex augue sed neque.</p>
+                    </div>
+                </div>
             </div>
+
+            <!-- Proyecto 2: Imagen a la derecha, texto a la izquierda -->
             <div class="proyecto-item">
-                <img src="https://via.placeholder.com/300" alt="Proyecto 2">
-                <h3>Proyecto 2</h3>
-                <p>Descripción breve del proyecto 2. Detalles sobre su propósito y resultado.</p>
+                <div class="proyecto-content">
+                    <div class="proyecto-text">
+                        <h3>Proyecto 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae neque at ipsum pharetra elementum. Donec hendrerit enim et elit cursus, a fringilla turpis aliquam. Sed euismod tincidunt felis, id aliquet velit. Cras venenatis elit id urna convallis, id placerat purus sollicitudin.</p>
+                        <p>Curabitur facilisis, urna in ullamcorper lobortis, elit tortor dictum leo, id gravida augue elit id odio. Sed feugiat, orci nec volutpat vestibulum, ligula nunc facilisis felis, non aliquet purus lorem eget eros. Suspendisse ac neque euismod, convallis mi vitae, ultricies augue.</p>
+                    </div>
+                    <div class="proyecto-image">
+                        <img src="https://via.placeholder.com/300" alt="Proyecto 2">
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>Información de Contacto: correo@ejemplo.com | Tel: 123-456-7890</p>
-        <div class="social-icons">
-            <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
-            <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
-            <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 3"></a>
-        </div>
+        <section id="contacto">
+            <p>Información de Contacto: correo@ejemplo.com | Tel: 123-456-7890</p>
+            <div class="social-icons">
+                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
+                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
+                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 3"></a>
+            </div>
+        </section>
     </footer>
 
     <script src="js/main.js"></script>

@@ -16,25 +16,32 @@ nav.barra {
     width: 100%;
     background-color: #444;
     z-index: 10;
-    padding: 20px 0; /* Agregado para mejorar el espaciado */
+    padding: 20px 0; /* Espaciado superior e inferior de la barra */
+    display: flex;
+    justify-content: center; /* Centra los elementos en la barra */
+    align-items: center; /* Alinea verticalmente los elementos */
 }
 
 nav ul {
     display: flex;
-    justify-content: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-/* Alineación del icono de Home a la derecha */
-nav ul li.home-icon {
-    margin-left: auto; /* Empuja el botón de Home a la derecha */
+/* Alineación del icono de Home a la derecha usando posición absoluta */
+nav .home-icon {
+    position: absolute;
+    right: 20px; /* Ajusta el espacio desde el borde derecho */
+    top: 50%; /* Coloca el ícono en el centro vertical */
+    transform: translateY(-50%); /* Ajusta la alineación vertical */
 }
 
+/* Estilos de los enlaces de navegación */
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 10px 20px; /* Agrega espaciado alrededor de los enlaces */
 }
 
 /* Estilos del botón de Home */

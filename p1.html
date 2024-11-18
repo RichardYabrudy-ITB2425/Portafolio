@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 1</title>
+    <link rel="stylesheet" href="css/styles1.css">
+</head>
+<body>
+    <header>
+        <h1>Proyecto 1</h1>
+    </header>
+    
+    <section class="contenido">
+        <!-- Caja para la imagen y texto -->
+        <div class="caja-imagen">
+            <button class="flecha izquierda" onclick="cambiarImagen(-1)">&#8592;</button>
+            <div class="imagen-container">
+                <img id="imagen-proyecto" src="https://via.placeholder.com/300" alt="Imagen Proyecto 1">
+            </div>
+            <button class="flecha derecha" onclick="cambiarImagen(1)">&#8594;</button>
+        </div>
+        
+        <!-- Texto descriptivo -->
+        <div class="descripcion">
+            <p id="descripcion-texto">
+                Descripción del Proyecto 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

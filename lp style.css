@@ -1,0 +1,128 @@
+/* General */
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: #2D2D2D;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Barra de navegación */
+nav.barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #444;
+    z-index: 10;
+    padding: 20px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Espaciado entre los elementos de la barra de navegación */
+nav ul li {
+    margin: 0 10px; /* Espaciado entre cada elemento */
+}
+
+nav ul li.home-icon {
+    margin-left: auto; /* Alinea el icono de inicio a la derecha */
+}
+
+/* Estilo para el "Mis Proyectos" como un título sin animación */
+nav ul li .mis-proyectos {
+    color: #fff;
+    font-size: 30px; /* Tamaño de texto */
+    font-weight: bold; /* Texto en negrita */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 0; /* Sin bordes redondeados */
+    cursor: default; /* No es clickeable */
+}
+
+/* Estilos para el botón home */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.home-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.home-button:hover {
+    transform: scale(1.1); /* Efecto de hover: aumentar tamaño */
+}
+
+/* Proyectos */
+.proyectos {
+    margin: 50px 0;
+    padding: 50px 20px;
+    background-color: #3e3e3e;
+}
+
+.proyecto-item {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.proyecto-content {
+    display: flex;
+    flex-direction: column; /* Elementos en columna */
+    align-items: flex-start; /* Alineación a la izquierda */
+    gap: 10px; /* Espaciado entre los elementos */
+    margin-left: 20px; /* Margen izquierdo */
+}
+
+.proyecto-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.proyecto-image img:hover {
+    transform: scale(1.05); /* Efecto de hover: aumentar imagen */
+}
+
+.proyecto-text {
+    text-align: left;
+}
+
+.proyecto-text h2 {
+    margin: 10px 0 0 0; /* Margen superior del título */
+}
+
+.proyecto-text p,
+.proyecto-text a {
+    margin: 5px 0; /* Margen entre los párrafos */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .proyecto-content {
+        flex-direction: column;
+        align-items: center; /* Centra los elementos en pantallas pequeñas */
+        margin-left: 0; /* Elimina el margen izquierdo en dispositivos pequeños */
+    }
+
+    .proyecto-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}

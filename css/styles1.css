@@ -1,0 +1,210 @@
+/* General */
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: #2D2D2D;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo del encabezado */
+header h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal de la sección */
+.contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Caja para la imagen */
+.caja-imagen {
+    position: relative;  /* Necesario para posicionar las flechas dentro del contenedor */
+    margin-left: 40px;  /* Empuja la caja hacia la derecha */
+}
+
+/* Estilo para el contenedor de la imagen */
+.imagen-container {
+    position: relative;
+    width: 300px;  /* Tamaño fijo para la imagen */
+    height: 300px;  /* Asegura que la imagen se ajuste bien */
+}
+
+.imagen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Hace que la imagen cubra todo el contenedor sin deformarse */
+    border-radius: 8px;
+}
+
+/* Estilo de las flechas */
+.flecha {
+    position: absolute;  /* Las flechas se posicionan dentro del contenedor de la imagen */
+    top: 50%;  /* Posicionar las flechas verticalmente en el medio */
+    transform: translateY(-50%);  /* Centra las flechas verticalmente */
+    background-color: transparent;  /* Fondo transparente */
+    color: white;  /* Color blanco para las flechas */
+    font-size: 1.2em;  /* Tamaño más pequeño de las flechas */
+    border: none;
+    padding: 4px 6px;  /* Menos padding para hacerlas más pequeñas */
+    cursor: pointer;
+    z-index: 10;  /* Asegura que las flechas estén por encima de la imagen */
+}
+
+/* Flecha izquierda */
+.flecha.izquierda {
+    left: 5px;  /* Acercamos más la flecha a la izquierda */
+}
+
+/* Flecha derecha */
+.flecha.derecha {
+    right: 5px;  /* Acercamos más la flecha a la derecha */
+}
+
+/* Estilo del texto descriptivo */
+.descripcion {
+    width: 40%;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #f0f0f0;  /* Aseguramos que el texto sea de color claro */
+}
+
+/* Estilos de los botones de las flechas al pasar el cursor */
+.flecha:hover {
+    background-color: rgba(0, 0, 0, 0.3);  /* Fondo ligeramente oscuro al pasar el cursor */
+}
+
+/* Sección "Sobre mí" */
+.about {
+    background-color: #3e3e3e;
+    padding: 50px 20px;
+    margin-top: 80px; /* Ajuste para la barra de navegación fija */
+    display: flex;
+    justify-content: center;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Hero Section (Encabezado) */
+.hero-section {
+    background-color: #333;
+    color: #fff;
+    padding: 30px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header-text h1 {
+    margin-bottom: 10px;
+}
+
+/* Proyectos */
+.proyectos {
+    margin: 50px 0;
+    padding: 50px 20px;
+    background-color: #3e3e3e;
+}
+
+.proyecto-item {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.proyecto-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.proyecto-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.proyecto-image img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/* Proyecto 1: Imagen a la izquierda, texto a la derecha */
+.proyecto-izquierda .proyecto-content {
+    flex-direction: row; /* Imagen a la izquierda, texto a la derecha */
+}
+
+/* Proyecto 2: Imagen a la derecha del todo, texto a la izquierda */
+.proyecto-derecha .proyecto-content {
+    flex-direction: row; /* Imagen y texto en una fila */
+    justify-content: space-between; /* Texto a la izquierda, imagen a la derecha */
+}
+
+.proyecto-derecha .proyecto-image {
+    order: 2; /* Coloca la imagen al final dentro de .proyecto-content */
+}
+
+.proyecto-derecha .proyecto-text {
+    order: 1; /* Coloca el texto antes de la imagen */
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.social-icons img {
+    margin: 0 5px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .proyecto-content {
+        flex-direction: column;
+    }
+
+    .proyecto-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}

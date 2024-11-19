@@ -8,6 +8,76 @@ body {
     box-sizing: border-box;
 }
 
+/* Estilo para los campos de formulario */
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #444; /* Color de borde por defecto */
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #333; /* Fondo oscuro para los campos */
+    color: #fff; /* Texto en blanco */
+}
+
+/* Foco en los campos */
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Estilos para los mensajes de error */
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+    margin-top: 5px;
+}
+
+input[type="text"].error, input[type="email"].error, textarea.error {
+    border-color: red; /* Bordes rojos para campos con error */
+}
+
+/* Cuadro de validación a la derecha del formulario */
+.validation-box {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    margin-left: 20px;
+    color: #fff;
+    width: 250px;
+    max-height: 300px;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.validation-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.validation-box li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Iconos de ticks y X */
+.validation-box .valid {
+    color: green;
+}
+
+.validation-box .invalid {
+    color: red;
+}
+
+.validation-box .icon {
+    margin-right: 10px;
+}
+
 /* Barra de navegación */
 nav.barra {
     position: fixed;
@@ -220,6 +290,7 @@ nav ul li a:hover {
     font-size: 18px;
     font-weight: bold;
 }
+
 .close-btn:hover {
     color: red;
 }
@@ -236,14 +307,53 @@ input[type="text"], input[type="email"], textarea {
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #444; /* Borde por defecto */
     border-radius: 5px;
     box-sizing: border-box;
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
 }
 
 input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     border-color: #007bff;
     outline: none;
+}
+
+.validation-box {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    margin-left: 20px;
+    color: #fff;
+    width: 250px;
+    max-height: 300px;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.validation-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.validation-box li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.validation-box .valid {
+    color: green;
+}
+
+.validation-box .invalid {
+    color: red;
+}
+
+.validation-box .icon {
+    margin-right: 10px;
 }
 
 /* Media Queries */
@@ -264,5 +374,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
     .modal-content {
         width: 90%;
+    }
+
+    .validation-box {
+        width: 100%;
+        margin-top: 20px;
     }
 }

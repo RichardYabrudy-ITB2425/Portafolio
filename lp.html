@@ -10,9 +10,16 @@
     <!-- Barra de navegación -->
     <nav class="barra">
         <ul>
-            <li><span class="mis-proyectos">Mis Proyectos</span></li> <!-- "Mis Proyectos" como texto estático, no un enlace ni un botón -->
-            <!-- Enlace alrededor del botón Home -->
-            <li class="home-icon"><a href="index.html"><div class="home-button">🏠</div></a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <!-- Botón redondo de Home -->
+            <li class="home-icon">
+                <a href="index.html">
+                    <img src="https://via.placeholder.com/40" alt="Home Icon" class="home-button">
+                </a>
+            </li>
         </ul>
     </nav>
 
@@ -46,5 +53,47 @@
             </div>
         </div>
     </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <section id="contacto">
+            <p>Información de Contacto: javi@guapo.es | Tel: 123-456-7890</p>
+            
+            <!-- Botón para abrir el formulario de contacto -->
+            <button id="contact-form-button" class="contact-button">Formulario de Contacto</button>
+
+            <div class="social-icons">
+                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
+                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
+                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 3"></a>
+            </div>
+        </section>
+    </footer>
+
+    <!-- Modal del formulario de contacto -->
+    <div id="contact-form-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-form" class="close-btn">&times;</span>
+            <h2>Formulario de Contacto</h2>
+            <form id="contact-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <p id="name-error" class="error-message"></p>
+                
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <p id="email-error" class="error-message"></p>
+    
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                <p id="message-error" class="error-message"></p>
+    
+                <button type="submit">Enviar</button>
+                <button type="button" id="close-form">Cancelar</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
 </body>
 </html>

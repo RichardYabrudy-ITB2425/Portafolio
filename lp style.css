@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    margin-top: 80px; /* Añadir espacio superior similar al primer CSS */
 }
 
 /* Barra de navegación */
@@ -16,24 +17,23 @@ nav.barra {
     width: 100%;
     background-color: #444;
     z-index: 10;
-    padding: 20px 0;
+    padding: 20px 0; /* Espaciado superior e inferior de la barra */
+    display: flex;
+    justify-content: center; /* Centra los elementos de la barra */
+    align-items: center; /* Alineación vertical de los elementos */
 }
 
 nav ul {
     display: flex;
-    justify-content: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    justify-content: center; /* Centra los elementos de la lista */
 }
 
 /* Espaciado entre los elementos de la barra de navegación */
 nav ul li {
-    margin: 0 10px; /* Espaciado entre cada elemento */
-}
-
-nav ul li.home-icon {
-    margin-left: auto; /* Alinea el icono de inicio a la derecha */
+    margin: 0 15px; /* Espaciado entre cada elemento */
 }
 
 /* Estilo para el "Mis Proyectos" como un título sin animación */
@@ -47,23 +47,32 @@ nav ul li .mis-proyectos {
     cursor: default; /* No es clickeable */
 }
 
-/* Estilos para el botón home */
+/* Estilos del botón de Home */
+.home-button {
+    width: 30px; /* Aumentado el tamaño del botón */
+    height: 30px; /* Aumentado el tamaño del botón */
+    border-radius: 50%; /* Hace que el botón sea redondo */
+    background-color: #f0f0f0;
+    padding: 8px; /* Aumentado el padding */
+    transition: transform 0.2s ease;
+}
+
+.home-button:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+/* Estilos para los enlaces de navegación */
 nav ul li a {
     color: #fff;
     text-decoration: none;
 }
 
-.home-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #f0f0f0;
-    padding: 5px;
-    transition: transform 0.2s ease;
-}
-
-.home-button:hover {
-    transform: scale(1.1); /* Efecto de hover: aumentar tamaño */
+/* Alineación del icono Home a la derecha */
+nav .home-icon {
+    position: absolute;
+    right: 20px; /* Ajusta el espacio desde el borde derecho */
+    top: 50%; /* Coloca el ícono en el centro vertical */
+    transform: translateY(-50%); /* Ajusta la alineación vertical */
 }
 
 /* Proyectos */

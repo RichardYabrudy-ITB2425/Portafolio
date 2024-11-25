@@ -39,33 +39,46 @@ input[type="text"].error, input[type="email"].error, textarea.error {
     border-color: red; /* Bordes rojos para campos con error */
 }
 
-/* Cuadro de validación a la derecha del formulario */
+/* Caja de validación a la derecha del formulario */
+/* Caja de validación */
 .validation-box {
     background-color: #444;
     padding: 20px;
     border-radius: 8px;
-    margin-left: 20px;
     color: #fff;
     width: 250px;
     max-height: 300px;
     overflow-y: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: absolute; /* Aseguramos que esté posicionada relativamente al formulario */
+    display: none; /* Inicialmente oculta */
+    z-index: 1000; /* Asegura que la caja esté por encima de otros elementos */
 }
 
+/* Formulario contenedor */
+.form-container {
+    position: relative; /* Necesario para posicionar la caja de validación dentro del formulario */
+}
+
+/* Asegúrate de que las listas dentro de la caja de validación estén bien formateadas */
 .validation-box ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .validation-box li {
     margin: 10px 0;
     display: flex;
     align-items: center;
+    color: white; /* Color por defecto */
 }
 
-/* Iconos de ticks y X */
+.validation-box .icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Cambios visuales para los mensajes de validez */
 .validation-box .valid {
     color: green;
 }
@@ -76,6 +89,7 @@ input[type="text"].error, input[type="email"].error, textarea.error {
 
 .validation-box .icon {
     margin-right: 10px;
+    font-size: 1.5em;
 }
 
 /* Barra de navegación */
@@ -257,9 +271,64 @@ nav ul li a:hover {
     text-align: center;
     transition: background-color 0.3s;
 }
+.validation-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
+.validation-box li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: white; /* Color por defecto */
+}
+
+.validation-box .icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
 .contact-button:hover {
     background-color: #777;
+}
+
+/* Contenedor de botones */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Espaciado entre el formulario y los botones */
+}
+
+/* Estilos para el botón de Enviar */
+.submit-btn {
+    background-color: #28a745; /* Verde */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 45%; /* Asegura que los botones no se sobrepongan */
+}
+
+.submit-btn:hover {
+    background-color: #218838; /* Color más oscuro al pasar el ratón */
+}
+
+/* Estilos para el botón de Cancelar */
+.cancel-btn {
+    background-color: #dc3545; /* Rojo */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 45%; /* Asegura que los botones no se sobrepongan */
+}
+
+.cancel-btn:hover {
+    background-color: #c82333; /* Color más oscuro al pasar el ratón */
 }
 
 /* Modal */

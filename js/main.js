@@ -1,158 +1,170 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contact-form');
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const messageInput = document.getElementById('message');
-    const nameError = document.getElementById('name-error');
-    const emailError = document.getElementById('email-error');
-    const messageError = document.getElementById('message-error');
-    const contactButton = document.querySelector(".contact-button");
+    // Verificar si el elemento 'hamburger-icon' existe antes de agregar el event listener
+    const menuHamburguesa = document.getElementById('hamburger-icon');
+    const menu = document.getElementById('menu');  // Cambié esto de .menu a #menu (ID)
+    const contactButton = document.getElementById("contact-form-button");
     const modal = document.querySelector(".modal");
     const closeBtn = document.querySelector(".close-btn");
-    const validationBox = document.querySelector(".validation-box");
-    const errorMessages = form.querySelectorAll(".error-message");
 
-    // Función para validar el formato del correo
-    const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    };
+    // Función para abrir el menú
+    if (menuHamburguesa && menu) {
+        menuHamburguesa.addEventListener('click', () => {
+            menu.classList.toggle('show'); // Mostrar u ocultar el menú
+        });
+    } else {
+        console.warn("El elemento 'hamburger-icon' o 'menu' no se encontró.");
+    }
 
-    // Función para actualizar la caja de validación
-    function updateValidationBox() {
-        validationBox.style.display = "none"; // Inicialmente oculta la caja
-        
-        // Solo muestra la caja si hay errores
-        const hasErrors = nameInput.value.trim() === "" || !validateEmail(emailInput.value) || messageInput.value.trim() === "";
-        
-        if (hasErrors) {
-            validationBox.style.display = "block"; // Mostrar la caja de validación si hay errores
-            
-            validationBox.innerHTML = `
-                <ul>
-                    <li data-rule="name"><span class="icon">✘</span> Debe ponerse un nombre</li>
-                    <li data-rule="email"><span class="icon">✘</span> El correo debe ser válido</li>
-                    <li data-rule="message"><span class="icon">✘</span> Debe contener un mensaje</li>
-                </ul>
-            `;
-        }
-    
-        const rules = [
-            {
-                field: nameInput,
-                isValid: nameInput.value.trim() !== "",
-                rule: "name",
-                successMsg: "Nombre válido.",
-            },
-            {
-                field: emailInput,
-                isValid: validateEmail(emailInput.value),
-                rule: "email",
-                successMsg: "Correo válido.",
-            },
-            {
-                field: messageInput,
-                isValid: messageInput.value.trim() !== "",
-                rule: "message",
-                successMsg: "Mensaje válido.",
-            },
-        ];
-    
-        rules.forEach(({ field, isValid, rule, successMsg }) => {
-            const listItem = validationBox.querySelector(`[data-rule="${rule}"]`);
-            const icon = listItem.querySelector(".icon");
+    // Funcionalidad del modal
+    if (contactButton && modal) {
+        contactButton.addEventListener("click", () => {
+            modal.classList.add("show");
+        });
+    }
 
-            if (isValid) {
-                icon.textContent = "✔";
-                icon.style.color = "green"; // Color verde para validez
-                listItem.style.color = "green"; // Color verde en el texto
-                listItem.textContent = successMsg;
-            } else {
-                icon.textContent = "✘";
-                icon.style.color = "red"; // Color rojo para error
-                listItem.style.color = "red"; // Color rojo en el texto
-                listItem.textContent = `✘ ${listItem.textContent}`; // Añadir el icono al inicio
+    if (closeBtn && modal) {
+        closeBtn.addEventListener("click", () => {
+            modal.classList.remove("show");
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.classList.remove("show");
             }
         });
     }
 
-    // Mostrar error debajo de un campo
-    function showError(input, message) {
-        const errorElement = input.nextElementSibling;
-        errorElement.textContent = message;
-        errorElement.style.display = "block";
-        input.classList.add("error");
-    }
+    // Función de validación para el formulario
+    const form = document.getElementById('contact-form');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const validationBox = document.querySelector(".validation-box");
 
-    // Validación del formulario
-    function validateForm() {
+    const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    const updateValidationBox = () => {
+        const errors = [];
+
+        if (nameInput.value.trim() === "") {
+            errors.push("✘ Debe ponerse un nombre");
+        }
+        if (!validateEmail(emailInput.value)) {
+            errors.push("✘ El correo debe ser válido");
+        }
+        if (messageInput.value.trim() === "") {
+            errors.push("✘ Debe contener un mensaje");
+        }
+
+        if (errors.length > 0 && validationBox) {
+            validationBox.style.display = "block";
+            validationBox.innerHTML = `<ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>`;
+        } else if (validationBox) {
+            validationBox.style.display = "none";
+        }
+    };
+
+    const validateForm = () => {
         let isValid = true;
+        clearErrors(); // Limpiar errores anteriores
 
-        // Resetear errores visuales
-        errorMessages.forEach((error) => {
-            error.style.display = "none";
-        });
-
-        // Validación de nombre
         if (nameInput.value.trim() === "") {
             isValid = false;
             showError(nameInput, "Este campo es obligatorio.");
         }
-
-        // Validación de correo
         if (!validateEmail(emailInput.value)) {
             isValid = false;
             showError(emailInput, "Por favor ingresa un correo electrónico válido.");
         }
-
-        // Validación de mensaje
         if (messageInput.value.trim() === "") {
             isValid = false;
             showError(messageInput, "Este campo es obligatorio.");
         }
 
-        // Actualizar caja de validación
         updateValidationBox();
-
         return isValid;
+    };
+
+    const showError = (input, message) => {
+        let errorElement = document.getElementById(`${input.id}-error`);
+        if (!errorElement) {
+            errorElement = document.createElement("div");
+            errorElement.id = `${input.id}-error`;
+            errorElement.classList.add("error-message");
+            input.parentNode.appendChild(errorElement);
+        }
+        errorElement.textContent = message;
+        errorElement.style.display = "block";
+    };
+
+    const clearErrors = () => {
+        const errorMessages = document.querySelectorAll(".error-message");
+        errorMessages.forEach(error => {
+            error.style.display = "none";
+        });
+    };
+
+    // Cerrar el modal al hacer clic en el botón "Cancelar"
+    const cancelBtn = document.querySelector(".cancel-btn");
+    if (cancelBtn) {
+        cancelBtn.addEventListener("click", () => {
+            modal.classList.remove("show");
+            form.reset();
+            clearErrors();
+            updateValidationBox();
+        });
     }
 
-    // Función para abrir el modal
-    contactButton.addEventListener("click", function () {
-        modal.classList.add("show");
-    });
-
-    // Función para cerrar el modal
-    closeBtn.addEventListener("click", function () {
-        modal.classList.remove("show");
-    });
-
-    // Cerrar el modal si se hace clic fuera de la caja de formulario
-    modal.addEventListener("click", function (event) {
-        if (event.target === modal) {
-            modal.classList.remove("show");
-        }
+    // Validación en tiempo real
+    [nameInput, emailInput, messageInput].forEach((input) => {
+        input.addEventListener("input", () => {
+            clearErrors();
+            updateValidationBox();
+        });
     });
 
     // Enviar el formulario
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Evitar el envío del formulario
+    if (form) {
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
 
-        if (validateForm()) {
-            alert("Formulario enviado correctamente");
-            modal.classList.remove("show");
-            form.reset(); // Limpiar los campos del formulario
-            updateValidationBox(); // Reiniciar caja de validación
-        } else {
-            alert("Por favor corrige los errores en el formulario.");
-        }
-    });
-
-    // Eventos para validar dinámicamente
-    [nameInput, emailInput, messageInput].forEach((input) => {
-        input.addEventListener("input", updateValidationBox);
-    });
+            if (validateForm()) {
+                alert("Formulario enviado correctamente");
+                modal.classList.remove("show");
+                form.reset();
+                updateValidationBox();
+            } else {
+                alert("Por favor corrige los errores en el formulario.");
+            }
+        });
+    }
 
     // Inicializar validación
     updateValidationBox();
+
+    // Cerrar el menú cuando se haga clic en un enlace dentro del menú
+    const enlacesMenu = document.querySelectorAll('.menu a');
+    enlacesMenu.forEach(enlace => {
+        enlace.addEventListener('click', () => {
+            menu.classList.remove('show'); // Cerrar el menú al hacer clic en un enlace
+        });
+    });
+
+    // Manejo de la pantalla de carga
+    const loadingScreen = document.getElementById("loading-screen");
+    const proyectosLink = document.getElementById("proyectos-link");
+
+    if (proyectosLink && loadingScreen) {
+        proyectosLink.addEventListener("click", (e) => {
+            e.preventDefault(); // Prevenir redirección inmediata
+            loadingScreen.style.display = "flex"; // Mostrar la pantalla de carga
+            setTimeout(() => {
+                window.location.href = proyectosLink.href; // Redirigir después de 1 segundo
+            }, 1000); // Ajusta el tiempo de espera según lo necesites
+        });
+    } else {
+        console.error("El elemento 'proyectos-link' o 'loading-screen' no se encontró en el DOM.");
+    }
 });

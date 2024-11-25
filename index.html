@@ -6,16 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio y Proyectos</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:,"> <!-- Agregado favicon vacío -->
 </head>
 <body>
+    <!-- Contenedor de carga -->
+    <div id="loading-screen" style="display: none;">
+        <img src="gif/Carga_pagina.gif" alt="Cargando...">
+    </div>
+    <a href="lp.html" id="proyectos-link" style="text-decoration: none; color: inherit;">Proyectos</a>
+
     <!-- Barra de navegación -->
     <nav class="barra">
-        <ul>
+        <div class="menu-hamburguesa" id="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="menu" class="menu">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="lp.html" id="proyectos-link">Proyectos</a></li>
             <li><a href="#contacto">Contacto</a></li>
-            <!-- Botón redondo de Home -->
             <li class="home-icon">
                 <a href="index.html">
                     <img src="https://via.placeholder.com/40" alt="Home Icon" class="home-button">
@@ -24,13 +35,24 @@
         </ul>
     </nav>
 
-    <!-- Sección "Sobre mí" -->
+    <!-- Inicio -->
+    <section id="inicio">
+        <header class="hero-section">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Portafolio de: [Tu Nombre]</h1>
+                    <p>Texto descriptivo sobre tu misión y experiencia.</p>
+                </div>
+            </div>
+        </header>
+    </section>
+
+    <!-- Sobre mí -->
     <section id="sobre-mi" class="about">
         <div class="about-content">
             <div class="about-text">
                 <h2>Sobre Mí</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae neque at ipsum pharetra elementum. Donec hendrerit enim et elit cursus, a fringilla turpis aliquam. Sed euismod tincidunt felis, id aliquet velit. Cras venenatis elit id urna convallis, id placerat purus sollicitudin.</p>
-                <p>Morbi id turpis sit amet lorem tincidunt faucibus. Donec eleifend pharetra neque id luctus. Nulla aliquet felis metus, in tristique enim tincidunt vel. Maecenas at nisi metus. Ut viverra auctor purus, eu placerat dui hendrerit id. Suspendisse sollicitudin sit amet odio in interdum. Nullam egestas magna sed urna porttitor, a tempor metus congue.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div class="about-image">
                 <img src="https://via.placeholder.com/150" alt="Foto de perfil">
@@ -38,58 +60,38 @@
         </div>
     </section>
 
-    <!-- Sección de encabezado -->
-    <header class="hero-section">
-        <div class="header-content">
-            <div class="header-text">
-                <h1>Portafolio de: [Tu Nombre]</h1>
-                <p>Texto descriptivo sobre tu misión y experiencia.</p>
+    <!-- Proyectos -->
+    <section id="proyectos" class="proyectos">
+        <h2><a href="lp.html" class="proyectos-link">Proyectos</a></h2>
+        <div class="proyecto-item proyecto-izquierda">
+            <div class="proyecto-content">
+                <div class="proyecto-image">
+                    <img src="https://via.placeholder.com/300" alt="Proyecto 1">
+                </div>
+                <div class="proyecto-text">
+                    <h3>Proyecto 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
             </div>
         </div>
-    </header>
-
-    <main>
-        <!-- Proyectos -->
-        <section id="proyectos" class="proyectos">
-            <h2><a href="lp.html" style="text-decoration: none; color: inherit;">Proyectos</a></h2>
-
-            <!-- Proyecto 1: Imagen a la izquierda, texto a la derecha -->
-            <div class="proyecto-item proyecto-izquierda">
-                <div class="proyecto-content">
-                    <div class="proyecto-image">
-                        <img src="https://via.placeholder.com/300" alt="Proyecto 1">
-                    </div>
-                    <div class="proyecto-text">
-                        <h3>Proyecto 1</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae neque at ipsum pharetra elementum. Donec hendrerit enim et elit cursus, a fringilla turpis aliquam. Sed euismod tincidunt felis, id aliquet velit. Cras venenatis elit id urna convallis, id placerat purus sollicitudin.</p>
-                        <p>Fusce eget turpis eget felis tempor facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce tristique mi vitae neque venenatis, et sollicitudin felis dapibus. Proin euismod, nulla vitae ultricies sollicitudin, purus erat gravida sem, ut fermentum ex augue sed neque.</p>
-                    </div>
+        <div class="proyecto-item proyecto-derecha">
+            <div class="proyecto-content">
+                <div class="proyecto-text">
+                    <h3>Proyecto 2</h3>
+                    <p>Sed viverra nunc et ipsum suscipit.</p>
+                </div>
+                <div class="proyecto-image">
+                    <img src="https://via.placeholder.com/300" alt="Proyecto 2">
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Proyecto 2: Imagen a la derecha, texto a la izquierda -->
-            <div class="proyecto-item proyecto-derecha">
-                <div class="proyecto-content">
-                    <div class="proyecto-text">
-                        <h3>Proyecto 2</h3>
-                        <p>Sed viverra nunc et ipsum suscipit, et vestibulum purus luctus. Curabitur nec turpis sit amet sapien pharetra consequat. Nullam venenatis consectetur odio, non vehicula sapien tempus nec. Suspendisse potenti. Fusce auctor diam a justo hendrerit, non volutpat ligula tristique. Donec in leo a justo laoreet volutpat.</p>
-                        <p>Praesent nec vehicula est. Nulla facilisi. Ut ut vehicula enim, ut cursus lorem. Proin non sem et lectus dapibus convallis. Integer eget erat ut eros posuere feugiat. Nunc vulputate metus nec urna cursus, in tempor erat suscipit.</p>
-                    </div>
-                    <div class="proyecto-image">
-                        <img src="https://via.placeholder.com/300" alt="Proyecto 2">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
+    <!-- Contacto -->
     <footer class="footer">
         <section id="contacto">
-            <p>Información de Contacto: javi@guapo.es | Tel: 123-456-7890</p>
-            
-            <!-- Botón para abrir el formulario de contacto -->
+            <p>Información de Contacto: ejemplo@mail.com | Tel: 123-456-7890</p>
             <button id="contact-form-button" class="contact-button">Formulario de Contacto</button>
-
             <div class="social-icons">
                 <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
                 <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
@@ -98,40 +100,35 @@
         </section>
     </footer>
 
-<!-- Modal del formulario de contacto -->
-<div id="contact-form-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-form" class="close-btn">&times;</span>
-        <h2>Formulario de Contacto</h2>
-        <!-- Contenedor del formulario con la clase .form-container -->
-        <div class="form-container">
-            <form id="contact-form">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-                <p id="name-error" class="error-message"></p>
-
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-                <p id="email-error" class="error-message"></p>
-
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" required></textarea>
-                <p id="message-error" class="error-message"></p>
-
-                <!-- Botones de acción -->
-                <button type="submit">Enviar</button>
-                <button type="button" id="close-form">Cancelar</button>
-            </form>
-            
-            <!-- Caja de validación que se muestra a la derecha -->
+    <!-- Modal -->
+    <div id="contact-form-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content">
+            <button id="close-form" class="close-btn" aria-label="Cerrar">✖</button>
+            <h2 id="modal-title">Formulario de Contacto</h2>
+            <div class="form-container">
+                <form id="contact-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                    <p id="name-error" class="error-message"></p>
+    
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                    <p id="email-error" class="error-message"></p>
+    
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <p id="message-error" class="error-message"></p>
+    
+                    <div class="form-buttons">
+                        <button type="submit" class="submit-btn">Enviar</button>
+                        <button type="button" class="cancel-btn" id="cancel-form">Cancelar</button>
+                    </div>
+                </form>
+            </div>
             <div class="validation-box" id="validationBox"></div>
         </div>
     </div>
-</div>
 
-
-<!-- Caja de validación -->
-<div class="validation-box"></div>
     <script src="js/main.js"></script>
 </body>
 </html>

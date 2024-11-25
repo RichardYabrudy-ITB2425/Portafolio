@@ -14,6 +14,7 @@ input[type="text"], input[type="email"], textarea {
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 15px;
+    resize: none; /* Desactiva la redimensión */
     border: 1px solid #444; /* Color de borde por defecto */
     border-radius: 5px;
     box-sizing: border-box;
@@ -39,44 +40,42 @@ input[type="text"].error, input[type="email"].error, textarea.error {
     border-color: red; /* Bordes rojos para campos con error */
 }
 
-/* Caja de validación a la derecha del formulario */
 /* Caja de validación */
 .validation-box {
     background-color: #444;
     padding: 20px;
     border-radius: 8px;
     color: #fff;
-    width: 250px;
-    max-height: 300px;
-    overflow-y: auto;
-    position: absolute; /* Aseguramos que esté posicionada relativamente al formulario */
-    display: none; /* Inicialmente oculta */
-    z-index: 1000; /* Asegura que la caja esté por encima de otros elementos */
+    width: 100%; /* Se ajusta al 100% del contenedor */
+    max-width: 600px; /* Limita el ancho máximo de la caja */
+    margin-top: 20px; /* Añadir separación entre el formulario y la caja */
+    display: none; /* Se oculta por defecto */
 }
 
-/* Formulario contenedor */
-.form-container {
-    position: relative; /* Necesario para posicionar la caja de validación dentro del formulario */
-}
-
-/* Asegúrate de que las listas dentro de la caja de validación estén bien formateadas */
+/* Estilo para los elementos dentro de la validación */
 .validation-box ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
-    margin: 0;
 }
 
 .validation-box li {
     margin: 10px 0;
     display: flex;
     align-items: center;
-    color: white; /* Color por defecto */
+}
+
+.validation-box .valid {
+    color: green;
+}
+
+.validation-box .invalid {
+    color: red;
 }
 
 .validation-box .icon {
     margin-right: 10px;
-    font-size: 1.2em;
 }
+
 
 /* Cambios visuales para los mensajes de validez */
 .validation-box .valid {
@@ -105,6 +104,70 @@ nav.barra {
     justify-content: center; /* Centra los elementos en la barra */
     align-items: center; /* Alinea verticalmente los elementos */
 }
+
+/* Estilo para el menú hamburguesa */
+.menu-hamburguesa {
+    display: none; /* Ocultar el icono por defecto */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-hamburguesa span {
+    background-color: #333;
+    height: 4px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Mostrar el menú hamburguesa solo en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .menu-hamburguesa {
+        display: flex;
+    }
+
+    .menu {
+        display: none; /* Ocultar el menú en móviles */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 70px; /* Ajusta la posición del menú desplegable */
+        left: 0;
+        background-color: #333; /* Fondo del menú con el color #333 */
+        z-index: 1;
+        transition: width 0.3s ease-in-out; /* Transición suave */
+        overflow-x: hidden; /* Ocultar contenido extra cuando está cerrado */
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu li {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .menu a {
+        padding: 10px;
+        display: block;
+        color: #fff; /* Color de texto blanco */
+        text-decoration: none;
+    }
+
+    .menu a:hover {
+        background-color: #f4f4f4;
+        color: #f0a500; /* Cambio de color al pasar el ratón */
+    }
+
+    /* Mostrar el menú cuando el icono hamburguesa es clickeado */
+    .menu.show {
+        display: flex;
+    }
+}
+
 
 nav ul {
     display: flex;
@@ -242,6 +305,11 @@ nav ul li a:hover {
     order: 1; /* Coloca el texto antes de la imagen */
 }
 
+.proyectos-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Footer */
 .footer {
     text-align: center;
@@ -364,13 +432,6 @@ nav ul li a:hover {
     color: red;
 }
 
-.error-message {
-    color: red;
-    font-size: 12px;
-    display: none;
-    margin-top: 5px;
-}
-
 input[type="text"], input[type="email"], textarea {
     width: 100%;
     padding: 10px;
@@ -386,20 +447,18 @@ input[type="text"], input[type="email"], textarea {
 input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     border-color: #007bff;
     outline: none;
+    resize: none;
 }
 
 .validation-box {
     background-color: #444;
     padding: 20px;
     border-radius: 8px;
-    margin-left: 20px;
     color: #fff;
-    width: 250px;
-    max-height: 300px;
-    overflow-y: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
+    width: 100%; /* Se adapta al ancho del contenedor */
+    max-width: 600px; /* Ancho máximo */
+    margin-top: 20px; /* Espaciado respecto al formulario */
+    display: none; /* Oculto por defecto */
 }
 
 .validation-box ul {
@@ -427,26 +486,108 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* Media Queries */
 @media (max-width: 768px) {
+    /* Sección Sobre mí: cambiar la disposición */
     .about-content {
         flex-direction: column;
         text-align: center;
     }
 
+    .about-image img {
+        width: 100px;  /* Reducir el tamaño de la imagen en móviles */
+    }
+
+    /* Sección de proyectos: cambia la disposición de la imagen y el texto */
     .proyecto-content {
         flex-direction: column;
+        gap: 15px; /* Reducir el espacio entre imagen y texto */
     }
 
     .proyecto-image img {
-        max-width: 100%;
+        max-width: 100%; /* Hacer que la imagen ocupe el 100% del ancho */
         height: auto;
     }
 
+    /* Ajustar modal en pantallas pequeñas */
     .modal-content {
         width: 90%;
+        max-width: none; /* Elimina el límite de tamaño máximo */
     }
 
+    /* Validación: hacer la caja más flexible */
     .validation-box {
         width: 100%;
         margin-top: 20px;
     }
+
+    /* Barra de navegación: cambiar a una disposición más accesible */
+    nav.barra {
+        padding: 15px 0;
+    }
+
+    nav ul {
+        flex-direction: column; /* Cambiar de fila a columna */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 15px; /* Espaciado entre elementos */
+    }
+
+    /* Reducción de tamaño en botones */
+    .submit-btn, .cancel-btn {
+        width: 100%; /* Asegura que los botones ocupen todo el ancho */
+        margin: 10px 0; /* Espaciado entre botones */
+    }
+
+    .contact-button {
+        width: 100%;
+        padding: 15px; /* Aumenta el área clickeable */
+    }
+
+    /* Ajustes para los iconos sociales en el footer */
+    .social-icons img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste aún mayor para dispositivos muy pequeños */
+    .header-text h1 {
+        font-size: 1.5em; /* Reducir el tamaño del texto en la cabecera */
+    }
+
+    .about-image img {
+        width: 80px; /* Reducir la imagen aún más */
+    }
+
+    .proyecto-item {
+        padding: 15px; /* Reducir el padding de los proyectos */
+    }
+
+    .contact-button {
+        font-size: 1.2em; /* Aumentar el tamaño del texto para mejor legibilidad */
+    }
+
+/* Estilo del contenedor de carga */
+#loading-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+
+/* Estilo del gif de carga */
+#loading-gif {
+    width: 100px; /* Ajusta el tamaño del gif */
+    height: auto; /* Mantiene la proporción del gif */
+}
+
 }

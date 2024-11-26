@@ -9,13 +9,6 @@
     <link rel="icon" href="data:,"> <!-- Agregado favicon vacío -->
 </head>
 <body>
-    <!-- Contenedor de carga -->
-    <div id="loading-screen" style="display: none;">
-        <img src="gif/Carga_pagina.gif" alt="Cargando...">
-    </div>
-    
-    <a href="lp.html" id="proyectos-link" style="text-decoration: none; color: inherit;">Proyectos</a>
-
     <!-- Barra de navegación -->
     <nav class="barra">
         <div class="menu-hamburguesa" id="hamburger-icon">
@@ -24,9 +17,9 @@
             <span></span>
         </div>
         <ul id="menu" class="menu">
-            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="index.html">Inicio</a></li>
             <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="lp.html" id="proyectos-link">Proyectos</a></li>
+            <li><a href="transition.html" id="proyectos-link">Proyectos</a></li> <!-- Enlace a redirección -->
             <li><a href="#contacto">Contacto</a></li>
             <li class="home-icon">
                 <a href="index.html">
@@ -34,6 +27,7 @@
                 </a>
             </li>
         </ul>
+        
     </nav>
 
     <!-- Inicio -->
@@ -62,31 +56,36 @@
     </section>
 
     <!-- Proyectos -->
-    <section id="proyectos" class="proyectos">
-        <h2><a href="lp.html" class="proyectos-link">Proyectos</a></h2>
-        <div class="proyecto-item proyecto-izquierda">
-            <div class="proyecto-content">
-                <div class="proyecto-image">
+<section id="proyectos" class="proyectos">
+    <h2><a href="transition.html" class="proyectos-link">Proyectos</a></h2>
+    <div class="proyecto-item proyecto-izquierda">
+        <div class="proyecto-content">
+            <div class="proyecto-image">
+                <a href="p1.html"> <!-- Enlace solo alrededor de la imagen -->
                     <img src="https://via.placeholder.com/300" alt="Proyecto 1">
-                </div>
-                <div class="proyecto-text">
-                    <h3>Proyecto 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
+                </a>
+            </div>
+            <div class="proyecto-text">
+                <h3>Proyecto 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
         </div>
-        <div class="proyecto-item proyecto-derecha">
-            <div class="proyecto-content">
-                <div class="proyecto-text">
-                    <h3>Proyecto 2</h3>
-                    <p>Sed viverra nunc et ipsum suscipit.</p>
-                </div>
-                <div class="proyecto-image">
+    </div>
+    <div class="proyecto-item proyecto-derecha">
+        <div class="proyecto-content">
+            <div class="proyecto-text">
+                <h3>Proyecto 2</h3>
+                <p>Sed viverra nunc et ipsum suscipit.</p>
+            </div>
+            <div class="proyecto-image">
+                <a href="p2.html"> <!-- Enlace solo alrededor de la imagen -->
                     <img src="https://via.placeholder.com/300" alt="Proyecto 2">
-                </div>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Contacto -->
     <footer class="footer">
@@ -99,6 +98,7 @@
                 <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 3"></a>
             </div>
         </section>
+        <p class="copyright">© <span id="year"></span> Richard & Co. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Modal -->

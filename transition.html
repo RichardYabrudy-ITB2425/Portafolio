@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Transición</title>
+    <link rel="stylesheet" href="css/transition.css"> <!-- Tu CSS de transición -->
+</head>
+<body>
+    <!-- Contenedor de la pantalla de transición -->
+    <div id="transition-screen">
+        <img src="gif/Carga_pagina.gif" alt="Cargando..." id="transition-gif"> <!-- Tu GIF aquí -->
+        <div id="transition-text">
+            ¡Cargando! Sí, esto es una pantalla de carga totalmente innecesaria pero cuya creación ha resultado ser más complicada de lo que se esperaba, a todo esto. ¿Por qué sigues leyendo?
+        </div>
+        <!-- Botón de redirección -->
+        <button id="redirect-button" onclick="window.location.href = 'lp.html'">Redirigiendo en ... <span id="countdown">5</span></button>
+    </div>
+
+    <script src="js/transition.js"></script> <!-- Tu JS de transición -->
+</body>
+</html>

@@ -90,6 +90,12 @@ input[type="text"].error, input[type="email"].error, textarea.error {
     font-size: 1.5em;
 }
 
+
+/* Sección de Inicio */
+#inicio {
+    margin-top: 100px; /* Ajusta el margen para separar la barra de navegación del contenido */
+}
+
 /* Barra de navegación */
 nav.barra {
     position: fixed;

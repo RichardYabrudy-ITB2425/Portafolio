@@ -168,7 +168,6 @@ nav.barra {
     }
 }
 
-
 nav ul {
     display: flex;
     list-style-type: none;
@@ -571,23 +570,27 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* Estilo del contenedor de carga */
 #loading-screen {
-    display: none;
+    display: none; /* Ocultarlo por defecto */
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+    width: 100%; /* Cubre todo el ancho */
+    height: 100%; /* Cubre toda la altura */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+    overflow: hidden; /* Evitar barras de desplazamiento */
+    display: flex; /* Necesario para el centrado */
 }
-
 
 /* Estilo del gif de carga */
-#loading-gif {
+#loading-screen img {
     width: 100px; /* Ajusta el tamaño del gif */
-    height: auto; /* Mantiene la proporción del gif */
+    height: auto; /* Mantiene la proporción */
+    object-fit: contain; /* Asegura que el gif no se distorsione */
 }
+
+
 
 }

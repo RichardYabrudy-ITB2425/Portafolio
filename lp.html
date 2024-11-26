@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Proyectos</title>
-    <link rel="stylesheet" href="lp style.css">
+    <link rel="stylesheet" href="/css/stylelp.css">
 </head>
 <body>
     <!-- Barra de navegación -->
     <nav class="barra">
-        <ul>
+        <div class="menu-hamburguesa" id="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="menu" class="menu">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="lp.html" id="proyectos-link">Proyectos</a></li>
             <li><a href="#contacto">Contacto</a></li>
-            <!-- Botón redondo de Home -->
             <li class="home-icon">
                 <a href="index.html">
                     <img src="https://via.placeholder.com/40" alt="Home Icon" class="home-button">
@@ -54,14 +58,11 @@
         </div>
     </section>
 
-    <!-- Pie de página -->
+    <!-- Contacto -->
     <footer class="footer">
         <section id="contacto">
-            <p>Información de Contacto: javi@guapo.es | Tel: 123-456-7890</p>
-            
-            <!-- Botón para abrir el formulario de contacto -->
+            <p>Información de Contacto: ejemplo@mail.com | Tel: 123-456-7890</p>
             <button id="contact-form-button" class="contact-button">Formulario de Contacto</button>
-
             <div class="social-icons">
                 <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
                 <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
@@ -70,27 +71,32 @@
         </section>
     </footer>
 
-    <!-- Modal del formulario de contacto -->
-    <div id="contact-form-modal" class="modal">
+    <!-- Modal -->
+    <div id="contact-form-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-content">
-            <span id="close-form" class="close-btn">&times;</span>
-            <h2>Formulario de Contacto</h2>
-            <form id="contact-form">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-                <p id="name-error" class="error-message"></p>
-                
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-                <p id="email-error" class="error-message"></p>
+            <button id="close-form" class="close-btn" aria-label="Cerrar">✖</button>
+            <h2 id="modal-title">Formulario de Contacto</h2>
+            <div class="form-container">
+                <form id="contact-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                    <p id="name-error" class="error-message"></p>
     
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" required></textarea>
-                <p id="message-error" class="error-message"></p>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                    <p id="email-error" class="error-message"></p>
     
-                <button type="submit">Enviar</button>
-                <button type="button" id="close-form">Cancelar</button>
-            </form>
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <p id="message-error" class="error-message"></p>
+    
+                    <div class="form-buttons">
+                        <button type="submit" class="submit-btn">Enviar</button>
+                        <button type="button" class="cancel-btn" id="cancel-form">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="validation-box" id="validationBox"></div>
         </div>
     </div>
     

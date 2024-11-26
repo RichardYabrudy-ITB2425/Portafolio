@@ -154,17 +154,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Manejo de la pantalla de carga
     const loadingScreen = document.getElementById("loading-screen");
-    const proyectosLink = document.getElementById("proyectos-link");
+    const proyectosLinks = document.querySelectorAll('a[href="lp.html"]'); // Seleccionamos todos los enlaces que llevan a "lp.html"
 
-    if (proyectosLink && loadingScreen) {
-        proyectosLink.addEventListener("click", (e) => {
-            e.preventDefault(); // Prevenir redirección inmediata
-            loadingScreen.style.display = "flex"; // Mostrar la pantalla de carga
-            setTimeout(() => {
-                window.location.href = proyectosLink.href; // Redirigir después de 1 segundo
-            }, 1000); // Ajusta el tiempo de espera según lo necesites
+    // Verificar si los elementos están presentes
+    if (loadingScreen && proyectosLinks.length > 0) {
+        console.log("Elementos 'loading-screen' y enlaces a proyectos encontrados.");
+
+        proyectosLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault(); // Prevenir redirección inmediata
+                console.log("Clic activado. Mostrando la pantalla de carga...");
+                loadingScreen.style.display = "flex"; // Mostrar la pantalla de carga
+                document.body.style.overflow = "hidden"; // Evitar desplazamiento
+                document.body.style.position = "fixed"; // Fijar la posición de la página
+
+                setTimeout(() => {
+                    console.log("Redirigiendo a:", link.href);
+                    window.location.href = link.href; // Redirigir después de 3 segundos
+                }, 3000); // 3 segundos para ver el gif
+
+                // Restaurar la página después de la redirección
+                window.addEventListener('beforeunload', () => {
+                    document.body.style.overflow = "auto"; // Restaurar el desplazamiento
+                    document.body.style.position = "relative"; // Restaurar la posición
+                });
+            });
         });
     } else {
-        console.error("El elemento 'proyectos-link' o 'loading-screen' no se encontró en el DOM.");
+        console.error("El elemento 'loading-screen' o enlaces a proyectos no se encontraron en el DOM.", {
+            loadingScreen,
+            proyectosLinks
+        });
     }
 });

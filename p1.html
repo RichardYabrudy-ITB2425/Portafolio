@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="css/stylesp1.css">
 </head>
 <body>
+    <!-- Contenedor de carga -->
+    <div id="loading-screen" style="display: none;">
+        <img src="gif/Carga_pagina.gif" alt="Cargando...">
+    </div>
+    <a href="lp.html" id="proyectos-link" style="text-decoration: none; color: inherit;">Proyectos</a>
+
+    <!-- Barra de navegación -->
     <nav class="barra">
         <div class="menu-hamburguesa" id="hamburger-icon">
             <span></span>
@@ -14,8 +21,8 @@
             <span></span>
         </div>
         <ul id="menu" class="menu">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html/sobre-mi">Sobre mí</a></li>
             <li><a href="lp.html" id="proyectos-link">Proyectos</a></li>
             <li><a href="#contacto">Contacto</a></li>
             <li class="home-icon">
@@ -47,6 +54,49 @@
             </p>
         </div>
     </section>
+
+    <!-- Contacto -->
+    <footer class="footer">
+        <section id="contacto">
+            <p>Información de Contacto: ejemplo@mail.com | Tel: 123-456-7890</p>
+            <button id="contact-form-button" class="contact-button">Formulario de Contacto</button>
+            <div class="social-icons">
+                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
+                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
+                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 3"></a>
+            </div>
+        </section>
+    </footer>
+
+    <!-- Modal -->
+    <div id="contact-form-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content">
+            <button id="close-form" class="close-btn" aria-label="Cerrar">✖</button>
+            <h2 id="modal-title">Formulario de Contacto</h2>
+            <div class="form-container">
+                <form id="contact-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                    <p id="name-error" class="error-message"></p>
+    
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                    <p id="email-error" class="error-message"></p>
+    
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <p id="message-error" class="error-message"></p>
+    
+                    <div class="form-buttons">
+                        <button type="submit" class="submit-btn">Enviar</button>
+                        <button type="button" class="cancel-btn" id="cancel-form">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="validation-box" id="validationBox"></div>
+        </div>
+    </div>
+    
     <script src="js/main.js"></script>
     <script src="js/p1.js"></script>
 </body>

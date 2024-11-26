@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto 1</title>
-    <link rel="stylesheet" href="css/styles1.css">
+    <link rel="stylesheet" href="css/stylesp1.css">
 </head>
 <body>
     <nav class="barra">
-        <ul>
-            <!-- Botón redondo de Home -->
+        <div class="menu-hamburguesa" id="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="menu" class="menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="lp.html" id="proyectos-link">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
             <li class="home-icon">
                 <a href="index.html">
                     <img src="https://via.placeholder.com/40" alt="Home Icon" class="home-button">
@@ -17,6 +25,7 @@
             </li>
         </ul>
     </nav>
+
     <header>
         <h1>Proyecto 1</h1>
     </header>
@@ -38,7 +47,7 @@
             </p>
         </div>
     </section>
-
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/p1.js"></script>
 </body>
 </html>

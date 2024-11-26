@@ -1,33 +1,64 @@
+/* Barra de navegación fija en la parte superior derecha */
+.barra {
+    position: fixed; /* Fija la barra en la parte superior de la pantalla */
+    top: 20px;  /* Ajusta la distancia desde la parte superior */
+    right: 20px; /* Ajusta la distancia desde el borde derecho */
+    z-index: 1000; /* Asegura que la barra esté encima de otros elementos */
+}
+
+.barra ul {
+    list-style-type: none;
+    margin: 1;
+    padding: 0;
+}
+
+.barra li {
+    display: inline;
+}
+
+.home-icon {
+    display: inline-block;
+}
+
+.home-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;  /* Hace que el icono sea redondo */
+}
+
 /* General */
 body {
     font-family: Helvetica, sans-serif;
     background-color: #2D2D2D;
-    color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    color: #f0f0f0;    
 }
 
 /* Estilo del encabezado */
 header h1 {
+    background-color: #3a3a3a;
+    color: #fff;
+    padding: 30px;
+    margin-top: 20px;
     text-align: center;
-    font-size: 2.5em;
-    color: #f0f0f0;
-    margin-bottom: 20px;
+    border-radius: 16px;
 }
 
 /* Contenedor principal de la sección */
 .contenido {
+    margin: 50px 20;
+    padding: 50px 20px;
+    background-color: #3e3e3e;
     display: flex;
     justify-content: space-between;
+    border-radius: 16px;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 10px
 }
 
 /* Caja para la imagen */
 .caja-imagen {
     position: relative;  /* Necesario para posicionar las flechas dentro del contenedor */
-    margin-left: 40px;  /* Empuja la caja hacia la derecha */
+    margin-left: 5px;  /* Empuja la caja hacia la derecha */
 }
 
 /* Estilo para el contenedor de la imagen */
@@ -70,24 +101,21 @@ header h1 {
 
 /* Estilo del texto descriptivo */
 .descripcion {
-    width: 40%;
+    width: 60%;
     font-size: 1em;
     line-height: 1.6;
     color: #f0f0f0;  /* Aseguramos que el texto sea de color claro */
+    margin-left: auto; /* Empuja el texto hacia la derecha */
+    margin-right: 20px; /* Deja un espacio pequeño hacia el borde derecho */
+    word-wrap: break-word; /* Permite que las palabras largas se dividan y no salgan del contenedor */
+    overflow-wrap: break-word; /* Asegura que el texto largo no se salga del contenedor */
+    hyphens: auto; /* Habilita la separación automática de palabras si es necesario */
+    text-align: justify; /* Justifica el texto para una mejor distribución */
 }
 
 /* Estilos de los botones de las flechas al pasar el cursor */
 .flecha:hover {
     background-color: rgba(0, 0, 0, 0.3);  /* Fondo ligeramente oscuro al pasar el cursor */
-}
-
-/* Sección "Sobre mí" */
-.about {
-    background-color: #3e3e3e;
-    padding: 50px 20px;
-    margin-top: 80px; /* Ajuste para la barra de navegación fija */
-    display: flex;
-    justify-content: center;
 }
 
 .about-content {
@@ -128,7 +156,7 @@ header h1 {
 
 /* Proyectos */
 .proyectos {
-    margin: 50px 0;
+    margin: 50px 20;
     padding: 50px 20px;
     background-color: #3e3e3e;
 }
@@ -159,9 +187,7 @@ header h1 {
 }
 
 /* Proyecto 1: Imagen a la izquierda, texto a la derecha */
-.proyecto-izquierda .proyecto-content {
-    flex-direction: row; /* Imagen a la izquierda, texto a la derecha */
-}
+
 
 /* Proyecto 2: Imagen a la derecha del todo, texto a la izquierda */
 .proyecto-derecha .proyecto-content {

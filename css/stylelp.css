@@ -101,6 +101,19 @@ nav .home-icon {
     transform: translateY(-50%); /* Ajusta la alineación vertical */
 }
 
+/* Estilo base para enlaces */
+a {
+    color: #fff; /* Color del texto normal */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Cambio de color en hover */
+a:hover {
+    color: #007bff; /* Cambiar el color del texto al pasar el mouse */
+    background-color: rgba(255, 255, 255, 0.1); /* Opcional: ligero fondo */
+}
+
 /* Estilos de los enlaces de navegación */
 nav ul li a {
     color: #fff;

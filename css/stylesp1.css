@@ -8,6 +8,19 @@ body {
     box-sizing: border-box;
 }
 
+/* Estilo base para enlaces */
+a {
+    color: #fff; /* Color del texto normal */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Cambio de color en hover */
+a:hover {
+    color: #007bff; /* Cambiar el color del texto al pasar el mouse */
+    background-color: rgba(255, 255, 255, 0.1); /* Opcional: ligero fondo */
+}
+
 /* Estilo para los campos de formulario */
 input[type="text"], input[type="email"], textarea {
     width: 100%;

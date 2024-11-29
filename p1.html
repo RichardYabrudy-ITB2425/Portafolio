@@ -21,7 +21,7 @@
             <li><a href="#contacto">Contacto</a></li>
             <li class="home-icon">
                 <a href="index.html">
-                    <img src="https://via.placeholder.com/40" alt="Home Icon" class="home-button">
+                    <img src="./images/home.png" alt="Home Icon" class="home-button">
                 </a>
             </li>
         </ul>
@@ -32,66 +32,90 @@
     </header>
     
     <section class="contenido">
-        <!-- Caja para la imagen y texto -->
+        <!-- Caja para el video -->
         <div class="caja-imagen">
-            <button class="flecha izquierda" onclick="cambiarImagen(-1)">&#8592;</button>
-            <div class="imagen-container">
-                <img id="imagen-proyecto" src="https://via.placeholder.com/300" alt="Imagen Proyecto 1">
+            <div class="video-container">
+                <video id="video-proyecto" width="100%" controls>
+                    <source src="./videos/video.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
             </div>
-            <button class="flecha derecha" onclick="cambiarImagen(1)">&#8594;</button>
         </div>
         
         <!-- Texto descriptivo -->
         <div class="descripcion">
             <p id="descripcion-texto">
-                Descripción del Proyecto 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Descripción General del Proyecto SmartWaste:
+
+SmartWaste es un proyecto innovador que utiliza inteligencia artificial (IA) y visión por computadora para automatizar la gestión de residuos. Su objetivo principal es mejorar la eficiencia del reciclaje mediante un sistema que clasifica automáticamente los residuos.
+Objetivo:
+
+Crear un sistema basado en cámaras y algoritmos de IA que identifique y clasifique residuos en una línea de reciclaje, reduciendo errores humanos y mejorando la precisión del proceso.
+Cómo Funciona:
+
+    El sistema usa Raspberry Pi y cámaras para capturar imágenes de los residuos.
+    Algoritmos de visión por computadora analizan las imágenes y clasifican los residuos (plástico, vidrio, metal, etc.).
+    Los residuos son dirigidos automáticamente a los contenedores correspondientes.
+
+Proceso de Desarrollo:
+
+El proyecto comenzó con la identificación de problemas en la clasificación de residuos. Se entrenaron modelos de IA con imágenes etiquetadas manualmente. Los mayores desafíos fueron asegurar una correcta identificación bajo distintas condiciones de luz y calidad de las imágenes.
+Resultados Esperados:
+
+Un sistema de clasificación automatizado que optimiza el reciclaje, reduce el impacto ambiental y promueve la reutilización de recursos. Además, SmartWaste es adaptable a diferentes contextos, como plantas de reciclaje o sistemas comunitarios.
+Impacto y Futuro:
+
+SmartWaste contribuye al modelo de economía circular, reduciendo la contaminación y el desperdicio. A futuro, el sistema podría mejorarse con tecnologías como redes neuronales avanzadas y sensores, aumentando la precisión y eficiencia.
             </p>
         </div>
     </section>
 
-    <!-- Contacto -->
-    <footer class="footer">
-        <section id="contacto">
-            <p>Información de Contacto: ejemplo@mail.com | Tel: 123-456-7890</p>
+<!-- Contacto -->
+<footer class="footer">
+    <section id="contacto">
+        <article>
+            <p>Información de Contacto: rayc1609@gmail.com | Tel: +34 624 26 04 25</p>
             <button id="contact-form-button" class="contact-button">Formulario de Contacto</button>
-            <div class="social-icons">
-                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
-                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
-                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 3"></a>
-            </div>
-        </section>
-    </footer>
+            <aside class="social-icons">
+                <a href="https://www.linkedin.com/in/richard-yabrudy-cobis-8a4781260/"><img src="./images/linkedin.png" alt="Icono 1"></a>
+                <a href="https://github.com/RichardYabrudy-ITB2425"><img src="./images/github.png" alt="Icono 2"></a>
+                <a href="https://discord.com/users/870405058859270154"><img src="./images/discord.png" alt="Icono 3"></a>
+            </aside>
+        </article>
+        <p class="copyright">© <span id="year"></span> Richard & Co. Todos los derechos reservados.</p>
+    </section>
+</footer>
 
-    <!-- Modal -->
-    <div id="contact-form-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal-content">
-            <button id="close-form" class="close-btn" aria-label="Cerrar">✖</button>
-            <h2 id="modal-title">Formulario de Contacto</h2>
-            <div class="form-container">
-                <form id="contact-form">
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
-                    <p id="name-error" class="error-message"></p>
-    
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                    <p id="email-error" class="error-message"></p>
-    
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <p id="message-error" class="error-message"></p>
-    
-                    <div class="form-buttons">
-                        <button type="submit" class="submit-btn">Enviar</button>
-                        <button type="button" class="cancel-btn" id="cancel-form">Cancelar</button>
-                    </div>
-                </form>
-            </div>
-            <div class="validation-box" id="validationBox"></div>
+<!-- Modal -->
+<div id="contact-form-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-content">
+        <button id="close-form" class="close-btn" aria-label="Cerrar">✖</button>
+        <h2 id="modal-title">Formulario de Contacto</h2>
+        <div class="form-container">
+            <form id="contact-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <p id="name-error" class="error-message"></p>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <p id="email-error" class="error-message"></p>
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                <p id="message-error" class="error-message"></p>
+
+                <div class="form-buttons">
+                    <button type="submit" class="submit-btn">Enviar</button>
+                    <button type="button" class="cancel-btn" id="cancel-form">Cancelar</button>
+                </div>
+            </form>
         </div>
+        <div class="validation-box" id="validationBox"></div>
     </div>
-    
-    <script src="js/main.js"></script>
-    <script src="js/p1.js"></script>
+</div>
+
+<!-- Script -->
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@
             <li><a href="#contacto">Contacto</a></li>
             <li class="home-icon">
                 <a href="index.html">
-                    <img src="https://via.placeholder.com/40" alt="Home Icon" class="home-button">
+                    <img src="./images/home.png" alt="Home Icon" class="home-button">
                 </a>
             </li>
         </ul>
@@ -33,12 +33,12 @@
         <div class="proyecto-item">
             <div class="proyecto-content">
                 <div class="proyecto-image">
-                    <img src="https://via.placeholder.com/300x200?text=Imagen+Proyecto+1" alt="Imagen del proyecto 1">
+                    <img src="./images/cinta.jpg" alt="Imagen del proyecto 1">
                 </div>
                 <div class="proyecto-text">
                     <!-- Título de Proyecto 1 convertido en enlace a p1.html -->
                     <h2><a href="p1.html">Proyecto 1</a></h2>
-                    <p>Descripción breve del proyecto 1. Aquí puedes agregar más detalles sobre este trabajo.</p>
+                    <p>El Proyecto 1, SmartWaste, consistió en desarrollar un sistema automatizado para la gestión de residuos utilizando inteligencia artificial y visión por computadora. Configuré un modelo de IA en un Raspberry Pi para clasificar residuos, construí una cinta transportadora y optimicé la integración del hardware y software. También ayudé a crear un servidor web seguro para centralizar datos del sistema. Este proyecto combinó innovación tecnológica y sostenibilidad ambiental.</p>
                 </div>
             </div>
         </div>
@@ -47,59 +47,63 @@
         <div class="proyecto-item">
             <div class="proyecto-content">
                 <div class="proyecto-image">
-                    <img src="https://via.placeholder.com/300x200?text=Imagen+Proyecto+2" alt="Imagen del proyecto 2">
+                    <img src="./images/cpd.png" alt="Imagen del proyecto 2">
                 </div>
                 <div class="proyecto-text">
                     <!-- Título de Proyecto 2 convertido en enlace a p2.html -->
                     <h2><a href="p2.html">Proyecto 2</a></h2>
-                    <p>Descripción breve del proyecto 2. Aquí puedes agregar más detalles sobre este trabajo.</p>
+                    <p>Colaboré con CellU Alot SL en un proyecto práctico para diseñar una sala de servidores (CPD) en su nueva sede para 150 empleados. Planifiqué el espacio para tres racks (comunicaciones, servidores y almacenamiento), teniendo en cuenta ventilación, seguridad y eficiencia. Además, elaboré un informe de medidas de protección y un presupuesto completo. Fue un ejercicio que combinó tecnología, estándares de seguridad y análisis económico.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contacto -->
-    <footer class="footer">
-        <section id="contacto">
-            <p>Información de Contacto: ejemplo@mail.com | Tel: 123-456-7890</p>
+   <!-- Contacto -->
+<footer class="footer">
+    <section id="contacto">
+        <article>
+            <p>Información de Contacto: rayc1609@gmail.com | Tel: +34 624 26 04 25</p>
             <button id="contact-form-button" class="contact-button">Formulario de Contacto</button>
-            <div class="social-icons">
-                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
-                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
-                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 3"></a>
-            </div>
-        </section>
-    </footer>
+            <aside class="social-icons">
+                <a href="https://www.linkedin.com/in/richard-yabrudy-cobis-8a4781260/"><img src="./images/linkedin.png" alt="Icono 1"></a>
+                <a href="https://github.com/RichardYabrudy-ITB2425"><img src="./images/github.png" alt="Icono 2"></a>
+                <a href="https://discord.com/users/870405058859270154"><img src="./images/discord.png" alt="Icono 3"></a>
+            </aside>
+        </article>
+        <p class="copyright">© <span id="year"></span> Richard & Co. Todos los derechos reservados.</p>
+    </section>
+</footer>
 
-    <!-- Modal -->
-    <div id="contact-form-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal-content">
-            <button id="close-form" class="close-btn" aria-label="Cerrar">✖</button>
-            <h2 id="modal-title">Formulario de Contacto</h2>
-            <div class="form-container">
-                <form id="contact-form">
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
-                    <p id="name-error" class="error-message"></p>
-    
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                    <p id="email-error" class="error-message"></p>
-    
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <p id="message-error" class="error-message"></p>
-    
-                    <div class="form-buttons">
-                        <button type="submit" class="submit-btn">Enviar</button>
-                        <button type="button" class="cancel-btn" id="cancel-form">Cancelar</button>
-                    </div>
-                </form>
-            </div>
-            <div class="validation-box" id="validationBox"></div>
+<!-- Modal -->
+<div id="contact-form-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-content">
+        <button id="close-form" class="close-btn" aria-label="Cerrar">✖</button>
+        <h2 id="modal-title">Formulario de Contacto</h2>
+        <div class="form-container">
+            <form id="contact-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <p id="name-error" class="error-message"></p>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <p id="email-error" class="error-message"></p>
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                <p id="message-error" class="error-message"></p>
+
+                <div class="form-buttons">
+                    <button type="submit" class="submit-btn">Enviar</button>
+                    <button type="button" class="cancel-btn" id="cancel-form">Cancelar</button>
+                </div>
+            </form>
         </div>
+        <div class="validation-box" id="validationBox"></div>
     </div>
-    
-    <script src="js/main.js"></script>
+</div>
+
+<!-- Script -->
+<script src="js/main.js"></script>
 </body>
 </html>

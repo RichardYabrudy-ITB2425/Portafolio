@@ -21,7 +21,7 @@
             <li><a href="#contacto">Contacto</a></li>
             <li class="home-icon">
                 <a href="index.html">
-                    <img src="https://via.placeholder.com/40" alt="Home Icon" class="home-button">
+                    <img src="./images/home.png" alt="Home Icon" class="home-button">
                 </a>
             </li>
         </ul>
@@ -32,66 +32,88 @@
     </header>
     
     <section class="contenido">
-        <!-- Caja para la imagen y texto -->
-        <div class="caja-imagen">
-            <button class="flecha izquierda" onclick="cambiarImagen(-1)">&#8592;</button>
-            <div class="imagen-container">
-                <img id="imagen-proyecto" src="https://via.placeholder.com/300" alt="Imagen Proyecto 1">
+        <section class="contenido">
+            <!-- Caja para la imagen -->
+            <div class="caja-imagen">
+                <div class="imagen-container">
+                    <img id="imagen-proyecto" src="./images/presupuesto.png" alt="Imagen Proyecto CPD" width="75%">
+                </div>
             </div>
-            <button class="flecha derecha" onclick="cambiarImagen(1)">&#8594;</button>
-        </div>
         
         <!-- Texto descriptivo -->
         <div class="descripcion">
             <p id="descripcion-texto">
-                Descripción del Proyecto 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Descripción General del Proyecto CPD para CellU Alot SL
+
+                El proyecto CPD (Centro de Procesamiento de Datos) para la empresa CellU Alot SL busca diseñar e implementar una sala de servidores que garantice la seguridad, eficiencia y disponibilidad de los sistemas informáticos en su nueva sede. Este CPD será el núcleo de su infraestructura tecnológica y deberá cumplir con estrictos estándares de seguridad física y operativa.
+                Objetivo:
+                
+                Crear un espacio seguro y eficiente para alojar los servidores y equipos informáticos de la empresa, utilizando tecnologías de vanguardia y medidas de seguridad para garantizar la continuidad operativa y proteger los datos.
+                Cómo Funciona:
+                
+                    La sala de servidores se ubicará en el sótano del edificio, lo que proporcionará una mayor seguridad y control climático, al tiempo que minimiza las vibraciones y el ruido, creando un entorno de trabajo óptimo para los empleados.
+                    El equipo informático está compuesto por 3 racks: uno para comunicaciones (switches y routers), otro para servidores (al menos tres servidores), y un tercero para almacenamiento (discos duros).
+                    Se implementarán diversas medidas de seguridad física como el uso de escáneres biométricos y tarjetas de identificación para el control de acceso a la sala.
+                
+                Proceso de Desarrollo:
+                
+                El proyecto comenzó con un análisis de las necesidades tecnológicas de la empresa y un diseño detallado para asegurar que el CPD fuera escalable, seguro y eficiente. Se seleccionaron materiales adecuados para la construcción de la sala, como placas de fibrosilicato para las paredes y techos, y un sistema de refrigeración eficiente para mantener una temperatura controlada.
+                Resultados Esperados:
+                
+                El resultado final será una sala de servidores segura, eficiente y resistente a fallos, capaz de soportar el alto consumo de energía de los equipos informáticos. Además, el CPD será flexible y podrá adaptarse a futuras ampliaciones conforme crezca la empresa.
+                Impacto y Futuro:
+                
+                Este CPD no solo optimizará la gestión de los recursos informáticos de la empresa, sino que también mejorará la protección de los datos y sistemas. A largo plazo, el CPD será una pieza clave para garantizar la seguridad informática y la continuidad del negocio, permitiendo a la empresa crecer de manera segura y escalable.
             </p>
         </div>
     </section>
 
-    <!-- Contacto -->
-    <footer class="footer">
-        <section id="contacto">
-            <p>Información de Contacto: ejemplo@mail.com | Tel: 123-456-7890</p>
+<!-- Contacto -->
+<footer class="footer">
+    <section id="contacto">
+        <article>
+            <p>Información de Contacto: rayc1609@gmail.com | Tel: +34 624 26 04 25</p>
             <button id="contact-form-button" class="contact-button">Formulario de Contacto</button>
-            <div class="social-icons">
-                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
-                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
-                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 3"></a>
-            </div>
-        </section>
-    </footer>
+            <aside class="social-icons">
+                <a href="https://www.linkedin.com/in/richard-yabrudy-cobis-8a4781260/"><img src="./images/linkedin.png" alt="Icono 1"></a>
+                <a href="https://github.com/RichardYabrudy-ITB2425"><img src="./images/github.png" alt="Icono 2"></a>
+                <a href="https://discord.com/users/870405058859270154"><img src="./images/discord.png" alt="Icono 3"></a>
+            </aside>
+        </article>
+        <p class="copyright">© <span id="year"></span> Richard & Co. Todos los derechos reservados.</p>
+    </section>
+</footer>
 
-    <!-- Modal -->
-    <div id="contact-form-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal-content">
-            <button id="close-form" class="close-btn" aria-label="Cerrar">✖</button>
-            <h2 id="modal-title">Formulario de Contacto</h2>
-            <div class="form-container">
-                <form id="contact-form">
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
-                    <p id="name-error" class="error-message"></p>
-    
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                    <p id="email-error" class="error-message"></p>
-    
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <p id="message-error" class="error-message"></p>
-    
-                    <div class="form-buttons">
-                        <button type="submit" class="submit-btn">Enviar</button>
-                        <button type="button" class="cancel-btn" id="cancel-form">Cancelar</button>
-                    </div>
-                </form>
-            </div>
-            <div class="validation-box" id="validationBox"></div>
+<!-- Modal -->
+<div id="contact-form-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-content">
+        <button id="close-form" class="close-btn" aria-label="Cerrar">✖</button>
+        <h2 id="modal-title">Formulario de Contacto</h2>
+        <div class="form-container">
+            <form id="contact-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <p id="name-error" class="error-message"></p>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <p id="email-error" class="error-message"></p>
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                <p id="message-error" class="error-message"></p>
+
+                <div class="form-buttons">
+                    <button type="submit" class="submit-btn">Enviar</button>
+                    <button type="button" class="cancel-btn" id="cancel-form">Cancelar</button>
+                </div>
+            </form>
         </div>
+        <div class="validation-box" id="validationBox"></div>
     </div>
-    
-    <script src="js/main.js"></script>
-    <script src="js/p1.js"></script>
+</div>
+
+<!-- Script -->
+<script src="js/main.js"></script>
 </body>
 </html>

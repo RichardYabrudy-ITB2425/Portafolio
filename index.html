@@ -27,78 +27,85 @@
                 </a>
             </li>
         </ul>
-        
     </nav>
 
-    <!-- Inicio -->
-    <section id="inicio">
-        <header class="hero-section">
-            <div class="header-content">
-                <div class="header-text">
-                    <h1>Portafolio de: [Tu Nombre]</h1>
-                    <p>Texto descriptivo sobre tu misión y experiencia.</p>
+    <!-- Contenido Principal -->
+    <main>
+        <!-- Inicio -->
+        <section id="inicio">
+            <header class="hero-section">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1>Portafolio de: [Tu Nombre]</h1>
+                        <p>Texto descriptivo sobre tu misión y experiencia.</p>
+                    </div>
                 </div>
-            </div>
-        </header>
-    </section>
+            </header>
+        </section>
 
-    <!-- Sobre mí -->
-    <section id="sobre-mi" class="about">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Sobre Mí</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div class="about-image">
-                <img src="https://via.placeholder.com/150" alt="Foto de perfil">
-            </div>
-        </div>
-    </section>
+        <!-- Sobre mí -->
+        <section id="sobre-mi" class="about">
+            <article class="about-content">
+                <div class="about-text">
+                    <h2>Sobre Mí</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <aside class="about-image">
+                    <img src="https://via.placeholder.com/150" alt="Foto de perfil">
+                </aside>
+            </article>
+        </section>
 
-    <!-- Proyectos -->
-<section id="proyectos" class="proyectos">
-    <h2><a href="transition.html" class="proyectos-link">Proyectos</a></h2>
-    <div class="proyecto-item proyecto-izquierda">
-        <div class="proyecto-content">
-            <div class="proyecto-image">
-                <a href="p1.html"> <!-- Enlace solo alrededor de la imagen -->
-                    <img src="https://via.placeholder.com/300" alt="Proyecto 1">
-                </a>
-            </div>
-            <div class="proyecto-text">
-                <h3>Proyecto 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
-    </div>
-    <div class="proyecto-item proyecto-derecha">
-        <div class="proyecto-content">
-            <div class="proyecto-text">
-                <h3>Proyecto 2</h3>
-                <p>Sed viverra nunc et ipsum suscipit.</p>
-            </div>
-            <div class="proyecto-image">
-                <a href="p2.html"> <!-- Enlace solo alrededor de la imagen -->
-                    <img src="https://via.placeholder.com/300" alt="Proyecto 2">
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+        <!-- Proyectos -->
+        <section id="proyectos" class="proyectos">
+            <h2><a href="transition.html" class="proyectos-link">Proyectos</a></h2>
 
+            <!-- Proyecto 1 -->
+            <article class="proyecto-item proyecto-izquierda">
+                <div class="proyecto-content">
+                    <aside class="proyecto-image">
+                        <a href="p1.html">
+                            <img src="https://via.placeholder.com/300" alt="Proyecto 1">
+                        </a>
+                    </aside>
+                    <div class="proyecto-text">
+                        <h3>Proyecto 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Proyecto 2 -->
+            <article class="proyecto-item proyecto-derecha">
+                <div class="proyecto-content">
+                    <div class="proyecto-text">
+                        <h3>Proyecto 2</h3>
+                        <p>Sed viverra nunc et ipsum suscipit.</p>
+                    </div>
+                    <aside class="proyecto-image">
+                        <a href="p2.html">
+                            <img src="https://via.placeholder.com/300" alt="Proyecto 2">
+                        </a>
+                    </aside>
+                </div>
+            </article>
+        </section>
+    </main>
 
     <!-- Contacto -->
     <footer class="footer">
         <section id="contacto">
-            <p>Información de Contacto: ejemplo@mail.com | Tel: 123-456-7890</p>
-            <button id="contact-form-button" class="contact-button">Formulario de Contacto</button>
-            <div class="social-icons">
-                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
-                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
-                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 3"></a>
-            </div>
+            <article>
+                <p>Información de Contacto: ejemplo@mail.com | Tel: 123-456-7890</p>
+                <button id="contact-form-button" class="contact-button">Formulario de Contacto</button>
+                <aside class="social-icons">
+                    <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
+                    <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
+                    <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 3"></a>
+                </aside>
+            </article>
+            <p class="copyright">© <span id="year"></span> Richard & Co. Todos los derechos reservados.</p>
         </section>
-        <p class="copyright">© <span id="year"></span> Richard & Co. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Modal -->
@@ -130,6 +137,7 @@
         </div>
     </div>
 
+    <!-- Script -->
     <script src="js/main.js"></script>
 </body>
 </html>

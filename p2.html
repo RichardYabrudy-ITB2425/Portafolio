@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 2</title>
+    <link rel="stylesheet" href="css/stylesp1.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="barra">
+        <div class="menu-hamburguesa" id="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="menu" class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html/sobre-mi">Sobre mí</a></li>
+            <li><a href="lp.html" id="proyectos-link">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li class="home-icon">
+                <a href="index.html">
+                    <img src="https://via.placeholder.com/40" alt="Home Icon" class="home-button">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Proyecto 2</h1>
+    </header>
+    
+    <section class="contenido">
+        <!-- Caja para la imagen y texto -->
+        <div class="caja-imagen">
+            <button class="flecha izquierda" onclick="cambiarImagen(-1)">&#8592;</button>
+            <div class="imagen-container">
+                <img id="imagen-proyecto" src="https://via.placeholder.com/300" alt="Imagen Proyecto 1">
+            </div>
+            <button class="flecha derecha" onclick="cambiarImagen(1)">&#8594;</button>
+        </div>
+        
+        <!-- Texto descriptivo -->
+        <div class="descripcion">
+            <p id="descripcion-texto">
+                Descripción del Proyecto 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <footer class="footer">
+        <section id="contacto">
+            <p>Información de Contacto: ejemplo@mail.com | Tel: 123-456-7890</p>
+            <button id="contact-form-button" class="contact-button">Formulario de Contacto</button>
+            <div class="social-icons">
+                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 1"></a>
+                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 2"></a>
+                <a href="#"><img src="https://via.placeholder.com/20" alt="Icono 3"></a>
+            </div>
+        </section>
+    </footer>
+
+    <!-- Modal -->
+    <div id="contact-form-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content">
+            <button id="close-form" class="close-btn" aria-label="Cerrar">✖</button>
+            <h2 id="modal-title">Formulario de Contacto</h2>
+            <div class="form-container">
+                <form id="contact-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                    <p id="name-error" class="error-message"></p>
+    
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                    <p id="email-error" class="error-message"></p>
+    
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <p id="message-error" class="error-message"></p>
+    
+                    <div class="form-buttons">
+                        <button type="submit" class="submit-btn">Enviar</button>
+                        <button type="button" class="cancel-btn" id="cancel-form">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="validation-box" id="validationBox"></div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/p1.js"></script>
+</body>
+</html>
